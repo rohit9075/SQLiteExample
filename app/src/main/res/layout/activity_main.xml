@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dfdbc9"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <EditText
+        android:id="@+id/edittext_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+        android:layout_marginTop="62dp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/edittext_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/edittext_mobile"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+     android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:hint="Mobile"
+        android:inputType="phone"
+        android:maxLines="1" />
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        android:inputType="numberPassword"
+        android:maxLines="1" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:text="Register" />
+
+        <Button
+            android:id="@+id/button_getData"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:text="getdata" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
