@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 import com.rohit.sqliteexample.model.Student;
 
+import java.util.concurrent.locks.Condition;
+
 
 /**
  * This is the Sqlite helper class.
@@ -97,6 +99,49 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
         // Returning the cursor object to the calling method.
         return c;
+    }
+
+
+    /**
+     * Squlite method to find the whether the user data is present in the daabase or not
+     * @param email
+     * @return
+     */
+
+    public boolean checkCandidate(String email, String password) {
+
+        // array of columns to fetch
+        String[] columns = {Const.STUDENT_EMAIL, Const.STUDENT_PASSWORD};
+        SQLiteDatabase db = this.getReadableDatabase();
+        // selection criteria
+        String selection = Const.STUDENT_EMAIL + " = ?" + " AND " + Const.STUDENT_PASSWORD + " = ?";
+
+        // selection arguments
+        String[] selectionArgs = {email,password};
+
+        // query user table with conditions
+        /**
+         * Here query function is used to fetch records from user table this function works like we use sql query.
+         * SQL query equivalent to this query function is
+         * SELECT student_email, student_password  FROM student WHERE student_email = 'abc@gmail.com' AND student_password = '123456';
+         */
+        Cursor cursor = db.query(Const.TABLE_NAME, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                       //filter by row groups
+                null);                      //The sort order
+
+        int cursorCount = cursor.getCount();
+
+        cursor.close();
+        db.close();
+        if (cursorCount > 0) {
+            return true;
+        }
+
+        return false;
     }
 
 }

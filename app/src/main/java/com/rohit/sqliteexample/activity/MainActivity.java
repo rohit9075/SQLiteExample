@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.rohit.sqliteexample.R;
 import com.rohit.sqliteexample.db.SqliteHelper;
@@ -124,5 +125,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         student.setmStudentEmail(mStringEmail);
         student.setmStudentMobile(mStringMobile);
         student.setmStudentPassword(mStringPassword);
+    }
+
+    public void CheckEamil(View view) {
+
+        Boolean bool = sqliteHelper.checkCandidate("rohit9075@gmail.com","123456");
+
+        if (bool == true){
+            Toast.makeText(this, "user found", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
