@@ -55,7 +55,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
+     * This method will be used to insert student data in the database.
      * @param student
      */
 
