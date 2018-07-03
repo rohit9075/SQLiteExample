@@ -17,9 +17,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        // initView method call
+        initView();
+
+    }
+
+    /**
+     * initView to resolve view id to get reference.
+     */
+
+    private void initView() {
         mButtonLogin = findViewById(R.id.button);
         mButtonLogin.setOnClickListener(this);
-
     }
 
     @Override
