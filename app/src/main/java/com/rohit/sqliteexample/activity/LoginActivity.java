@@ -7,17 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.rohit.sqliteexample.R;
 import com.rohit.sqliteexample.utils.InputValidation;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mButtonLogin;
     InputValidation inputValidation;
 
     EditText mEdittextEamil;
     TextInputEditText mTextInputEdittextPassword;
+
+    TextView mTestViewRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +37,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      */
 
     private void initView() {
-        mButtonLogin = findViewById(R.id.button);
+        Button mButtonLogin = findViewById(R.id.button);
         mButtonLogin.setOnClickListener(this);
         inputValidation = new InputValidation(this);
+
+        mTestViewRegister = findViewById(R.id.textview_register);
+        mTestViewRegister.setOnClickListener(this);
 
         mEdittextEamil = findViewById(R.id.editText);
         mTextInputEdittextPassword = findViewById(R.id.password);
@@ -57,6 +62,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 Intent mIntentRegisterActivity = new Intent(this, MainActivity.class);
                 startActivity(mIntentRegisterActivity);
+                break;
+
+            case R.id.textview_register:
+                Intent mMainActivity = new Intent(this, MainActivity.class);
+                startActivity(mMainActivity);
         }
 
     }
