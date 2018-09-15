@@ -21,7 +21,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     /**
      * SqliteHelper class constructor
-     * @param context
+     * @param context activity context
      */
     public SqliteHelper(Context context) {
         super(context, Const.DATABASE, null, Const.DATABASE_VERSION);
@@ -30,7 +30,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     /**
      * This method will be called to create the table once instance of the class is created.
-     * @param db
+     * @param db object
      */
 
     @Override
@@ -41,9 +41,9 @@ public class SqliteHelper extends SQLiteOpenHelper {
     /**
      * This method is called to update the database if version is updated it will delete the older database and
      * create new one.
-     * @param db
-     * @param oldVersion
-     * @param newVersion
+     * @param db object
+     * @param oldVersion data base old version
+     * @param newVersion data base new version
      */
 
     @Override
@@ -56,7 +56,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     /**
      * This method will be used to insert student data in the database.
-     * @param student
+     * @param student object
      */
 
     public void insert(Student student){
@@ -83,7 +83,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     /**
      * getData method to retrive the data from the student table
-     * @return
+     * @return as cursor object
      */
 
 
@@ -104,8 +104,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     /**
      * Squlite method to find the whether the user data is present in the daabase or not
-     * @param email
-     * @return
+     * @param email candidate email as method first parameter
+     * @return boolean value as result
      */
 
     public boolean checkCandidate(String email, String password) {
@@ -120,7 +120,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {email,password};
 
         // query user table with conditions
-        /**
+        /*
          * Here query function is used to fetch records from user table this function works like we use sql query.
          * SQL query equivalent to this query function is
          * SELECT student_email, student_password  FROM student WHERE student_email = 'abc@gmail.com' AND student_password = '123456';
@@ -137,11 +137,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
         cursor.close();
         db.close();
-        if (cursorCount > 0) {
-            return true;
-        }
+        return cursorCount > 0;
 
-        return false;
     }
 
 }
