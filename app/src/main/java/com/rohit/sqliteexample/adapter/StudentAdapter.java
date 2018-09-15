@@ -19,7 +19,7 @@ import java.util.List;
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.studentViewHolder> {
 
 
-    private Context context;
+//    private Context context;
     /**
      * StudentAdapter class constructor
      */
@@ -28,15 +28,15 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.studentV
 
     public StudentAdapter(List<Student> studentsList, Context context) {
         this.studentsList = studentsList;
-        this.context = context;
+//        this.context = context;
     }
 
     /**
      * onCreateViewHolder method is used to create view at run time. This method is responsible
      * for creating the view as per the screen size.
-     * @param parent
-     * @param viewType
-     * @return
+     * @param parent parameter as viewGroup
+     * @param viewType view id
+     * @return as a object of type inner class
      */
 
     @NonNull
@@ -50,8 +50,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.studentV
 
     /**
      * This method is used map the data to view from the data source.
-     * @param holder
-     * @param position
+     * @param holder object
+     * @param position object position in the list
      */
 
     @Override
@@ -67,7 +67,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.studentV
 
     /**
      * This method is used to return the list item count.
-     * @return
+     * @return integer count value
      */
 
     @Override

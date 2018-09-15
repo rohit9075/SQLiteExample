@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This is the overridden method which is used to handle the click events
-     *
      * @param v view as a method parameter
      */
 
