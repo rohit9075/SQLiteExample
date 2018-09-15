@@ -26,15 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * This method will be called by the android framework (i.e. android system ) when activity will be launched.
-     *
-     * @param savedInstanceState
+     * @param savedInstanceState parameter as Bundle
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
+        /*
          * Calling the method intiView to getting the reference of the views
          */
         intiView();
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * This is the overridden method which is used to handle the click events
      *
-     * @param v
+     * @param v view as a method parameter
      */
 
     @Override
@@ -131,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Boolean bool = sqliteHelper.checkCandidate("rohit9075@gmail.com","123456");
 
-        if (bool == true){
+        if (bool){
             Toast.makeText(this, "user found", Toast.LENGTH_SHORT).show();
         }
 

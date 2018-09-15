@@ -26,9 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-        // initView method call
-        initView();
+        initView();  // initView method call
 
     }
 
@@ -47,6 +45,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mEdittextEamil = findViewById(R.id.editText);
         mTextInputEdittextPassword = findViewById(R.id.password);
     }
+
+    /**
+     * onClice method definition
+     * @param v parameter as a view id
+     */
 
     @Override
     public void onClick(View v) {
@@ -75,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     /**
      * Input field validation method
-     * @return
+     * @return boolean value
      */
 
     private boolean inputValidation() {
