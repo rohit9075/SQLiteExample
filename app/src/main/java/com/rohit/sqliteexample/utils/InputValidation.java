@@ -30,7 +30,7 @@ public class InputValidation {
                 editText.setError(message);
                 hideKeyboardFrom(editText);
                 return false;
-            }  //            textInputLayout.setErrorEnabled(false);
+            }  // textInputLayout.setErrorEnabled(false);
 
             return true;
         }
@@ -42,7 +42,6 @@ public class InputValidation {
                 hideKeyboardFrom(editText);
                 return false;
             }
-
 
             return true;
         }
@@ -75,9 +74,5 @@ public class InputValidation {
 
         return true;
     }
-
-
-
-
 
 }
